@@ -3,7 +3,7 @@ require "json"
 package = JSON.parse(File.read(File.join(__dir__, "package.json")))
 
 Pod::Spec.new do |s|
-  s.name         = "Razorpay"
+  s.name         = "RNRazorpay"
   s.version      = package["version"]
   s.summary      = package["description"]
   s.homepage     = package["homepage"]
@@ -17,7 +17,12 @@ Pod::Spec.new do |s|
   s.private_header_files = "ios/**/*.h"
 
   s.dependency "razorpay-pod"
-
+  
+  s.frameworks = 'WebKit'
+  
+  s.pod_target_xcconfig = {
+    'OTHER_LDFLAGS' => '-ObjC',
+  }
 
   install_modules_dependencies(s)
 end

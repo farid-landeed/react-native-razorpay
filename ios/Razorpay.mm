@@ -1,6 +1,8 @@
 #import "Razorpay.h"
 #import "RazorpayEventEmitter.h"
-#import <Razorpay/Razorpay-Swift.h>
+#import <WebKit/WebKit.h>
+#import <RazorpayCore/RazorpayCore-Swift.h>
+#import <RazorpayStandard/RazorpayStandard-Swift.h>
 
 @interface Razorpay () <RazorpayPaymentCompletionProtocolWithData, ExternalWalletSelectionProtocol>
 @end
